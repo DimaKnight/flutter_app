@@ -45,32 +45,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   Random _r = new Random();
-  static int r = 255,g = 255 ,b = 255;
-  Color _color = Color.fromARGB(255,r,g,b);
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  static int r = 255, g = 255, b = 255;
+  Color _color = Color.fromARGB(255, r, g, b);
 
   void _changeColor() {
     setState(() {
-      r =_r.nextInt(255);
+      r = _r.nextInt(255);
       g = _r.nextInt(255);
       b = _r.nextInt(255);
-      _color=Color.fromARGB(255, r, g, b);
-
+      _color = Color.fromARGB(255, r, g, b);
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -80,21 +66,17 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-  
 
     return new Container(
-     
         child: new FlatButton(
-          onPressed: _changeColor, color: _color, child:
-        new Text(
-          'I want a job at Solid Software\n'
-              '$r  $g  $b',
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.display1,
-          textScaleFactor: 0.8 ,
-           )
-        ));
-
-
+            onPressed: _changeColor,
+            color: _color,
+            child: new Text(
+              'I want a job at Solid Software\n'
+                  '$r  $g  $b',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.display1,
+              textScaleFactor: 0.8,
+            )));
   }
 }
